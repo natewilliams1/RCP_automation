@@ -13,13 +13,13 @@ describe 'RCP Login' do
     end
 
     after(:all) do
-       on CheckinPage do |page|
+       on CheckInPage do |page|
          page.sign_out
        end
     end
 
     it 'currently signs in as Daxko Admin User' do
-      on CheckinPage do |page|
+      on CheckInPage do |page|
         # expect(page.user_greeting).to include("Hi, Automation User!")
         expect(page.communities_element.text).to include("Communities (Daxko only)")
         expect(page.associations_element.text).to include("Associations (Daxko only)")

@@ -20,9 +20,9 @@ describe 'Check In' do
     end
 
     after(:all) do
-      # visit CheckinPage do |page|
-      #   page.cancel_and_confirm
-      # end
+      on CheckInPage do |page|
+        page.sign_out
+      end
     end
 
     it 'currently signs in as Daxko Admin User' do

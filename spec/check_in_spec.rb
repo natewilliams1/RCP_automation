@@ -1,5 +1,5 @@
-describe 'RCP Login' do
-  context 'with admin login credentials' do
+describe 'Check In' do
+  context 'A valid user' do
     before(:all) do
       @user_name = 'test_automation'
       @user_password = 'UP83uN7pM5sEmBfA!'
@@ -10,19 +10,24 @@ describe 'RCP Login' do
             user_password: @user_password
         )
       end
+
+      on CheckInPage do |page|
+        page.checkin_field = '12345'
+        page.submit_button
+        page.member_table_element.when_present
+      end
+
     end
 
     after(:all) do
-       on CheckInPage do |page|
-         page.sign_out
-       end
+      on CheckInPage do |page|
+        page.sign_out
+      end
     end
 
     it 'currently signs in as Daxko Admin User' do
       on CheckInPage do |page|
-        # expect(page.user_greeting).to include("Hi, Automation User!")
-        expect(page.communities_element.text).to include("Communities (Daxko only)")
-        expect(page.associations_element.text).to include("Associations (Daxko only)")
+        expect(page.search_div_element.text).to include("Cash, Johnny")
       end
     end
   end

@@ -15,5 +15,6 @@ div(:search_div, id: 'main_right')
 link(:associations, href: '/Association.mvc')
 link(:communities, href: '/Community.mvc')
 div(:user_greeting, class: 'subheader')
+link(:sign_out, href: '/Account.mvc/log_off')
 
 end

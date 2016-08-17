@@ -1,5 +1,5 @@
 describe 'Check In' do
-  context 'A valid user' do
+  context 'A valid member' do
     before(:all) do
       @user_name = 'test_automation'
       @user_password = 'UP83uN7pM5sEmBfA!'
@@ -26,8 +26,9 @@ describe 'Check In' do
       end
     end
 
-    it 'currently signs in as Daxko Admin User' do
+    it 'verifies checkin success message is present' do
       on CheckInPage do |page|
+        page.checkin_success_element.when_present
         expect(page.checkin_success_element.text).to include("visits this month")
       end
     end

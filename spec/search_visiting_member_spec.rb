@@ -1,5 +1,5 @@
-describe 'Check In' do
-  context 'A valid user' do
+describe 'Search for' do
+  context 'A member' do
     before(:all) do
       @user_name = 'test_automation'
       @user_password = 'UP83uN7pM5sEmBfA!'
@@ -25,7 +25,7 @@ describe 'Check In' do
       end
     end
 
-    it 'currently signs in as Daxko Admin User' do
+    it 'verifies member is returned' do
       on CheckInPage do |page|
         expect(page.search_div_element.text).to include("Cash, Johnny")
       end

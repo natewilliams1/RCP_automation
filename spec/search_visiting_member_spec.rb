@@ -15,7 +15,6 @@ describe 'Check In' do
         page.search_field = '12345'
         page.go_button
         page.member_table_element.when_present
-        page.check_in_element.click
       end
 
     end
@@ -28,7 +27,7 @@ describe 'Check In' do
 
     it 'currently signs in as Daxko Admin User' do
       on CheckInPage do |page|
-        expect(page.checkin_success_element.text).to include("visits this month")
+        expect(page.search_div_element.text).to include("Cash, Johnny")
       end
     end
   end

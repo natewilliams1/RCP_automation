@@ -14,7 +14,7 @@ describe 'Check In' do
       on CheckInPage do |page|
         page.search_field = '12345'
         page.go_button
-        page.member_table_element.when_present(timeout = 35)
+        page.member_table_element.when_present(timeout = 60)
         page.check_in_element.click
       end
 
@@ -28,7 +28,7 @@ describe 'Check In' do
 
     it 'verifies checkin success message is present' do
       on CheckInPage do |page|
-        page.checkin_success_element.when_present
+        page.checkin_success_element.when_present(timeout = 60)
         expect(page.checkin_success_element.text).to include("visits this month")
       end
     end

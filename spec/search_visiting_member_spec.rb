@@ -14,7 +14,7 @@ describe 'Search for' do
       on CheckInPage do |page|
         page.search_field = '12345'
         page.go_button
-        page.member_table_element.when_present
+        page.member_table_element.when_present(timeout = 60)
       end
 
     end

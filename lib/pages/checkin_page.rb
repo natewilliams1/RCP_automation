@@ -1,5 +1,6 @@
 class CheckInPage
 include PageObject
+include Faker
 
 page_url 'http://10.34.0.97:90/CheckIn.mvc'
 
@@ -12,6 +13,8 @@ div(:search_div, id: 'main_right')
 div(:check_in, class: 'checkin' )
 cell(:primary_action, class: 'primary-action')
 div(:checkin_success, class: 'checkin-success')
+div(:gear_icon, class: 'gear')
+div(:block_member, action: 'block')
 
 
 link(:associations, href: '/Association.mvc')
